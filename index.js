@@ -12,8 +12,9 @@ server.on('request', function (request, response) {
                 response.end();
             })
             } else {
+                    response.setHeader("Content-Type", "image/jpeg");
                     response.statusCode = 404;
-                    fs.readFile('./doggo.jpg', 'utf-8', function(err, data) {
+                    fs.readFile('./doggo.jpg', function(err, data) {
                         if (err) throw err;
                         response.write(data);
                         response.write('<h2 style="text-align:center;">Wrong way, dude</h2>');
