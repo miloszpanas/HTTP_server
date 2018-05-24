@@ -17,7 +17,6 @@ server.on('request', function (request, response) {
                     fs.readFile('./doggo.jpg', function(err, data) {
                         if (err) throw err;
                         response.write(data);
-                        response.write('<h2 style="text-align:center;">Wrong way, dude</h2>');
                         response.end();
                     })
                 }
